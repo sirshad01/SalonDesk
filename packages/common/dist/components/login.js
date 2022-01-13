@@ -54,7 +54,7 @@ var styles = react_native_1.StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center"
     },
     image: {
         marginBottom: 40,
