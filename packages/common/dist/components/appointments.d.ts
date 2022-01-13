@@ -8,4 +8,4 @@
  * @format
  */
 import React from 'react';
-export declare const LoginScreen: React.FC;
+export declare const AppointmentScreen: React.FC;

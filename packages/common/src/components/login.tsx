@@ -11,6 +11,8 @@
  * @format
  */
 
+
+import { Link } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useState } from 'react';
 import {
@@ -26,16 +28,15 @@ import {
     useColorScheme,
     View,
 } from 'react-native';
+import { LoginRouteProps } from '../Routes';
 import { RootStoreContext } from '../stores/RootStore';
 
 
 
 
-interface LoginProps {
 
-}
 
-export const LoginScreen: React.FC<LoginProps> = observer(({ }) => {
+export const LoginScreen: React.FC = observer(({ }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const rootStore = useContext(RootStoreContext);
@@ -69,9 +70,11 @@ export const LoginScreen: React.FC<LoginProps> = observer(({ }) => {
                 <Text style={styles.forgot_button}>Forgot Password?</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.loginBtn}>
+
+            <Link style={styles.loginBtn} to={{ screen: 'Home', params: { userId: '93792' } }} >
                 <Text style={styles.login_text}>LOGIN</Text>
-            </TouchableOpacity>
+            </Link>
+
         </View>
 
     );
@@ -130,7 +133,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         backgroundColor: "#e29e67",
         borderWidth: 1,
-        borderColor: "#000000"
+        borderColor: "#000000",
 
 
     },

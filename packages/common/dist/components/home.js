@@ -13,10 +13,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HomeScreen = void 0;
+var bottom_tabs_1 = require("@react-navigation/bottom-tabs");
 var mobx_react_lite_1 = require("mobx-react-lite");
 var react_1 = __importDefault(require("react"));
-var react_native_1 = require("react-native");
+var appointments_1 = require("./appointments");
+var sales_1 = require("./sales");
+var Tab = (0, bottom_tabs_1.createBottomTabNavigator)();
 exports.HomeScreen = (0, mobx_react_lite_1.observer)(function (_a) {
-    return (react_1.default.createElement(react_native_1.View, { style: { flex: 1, alignItems: 'center', justifyContent: 'center' } },
-        react_1.default.createElement(react_native_1.Text, null, "Home Screen")));
+    return (react_1.default.createElement(Tab.Navigator, null,
+        react_1.default.createElement(Tab.Screen, { name: "Appointments", component: appointments_1.AppointmentScreen }),
+        react_1.default.createElement(Tab.Screen, { name: "Sales", component: sales_1.SalesScreen })));
 });

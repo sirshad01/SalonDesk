@@ -11,6 +11,8 @@
  * @format
  */
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useState } from 'react';
 import {
@@ -26,16 +28,21 @@ import {
     useColorScheme,
     View,
 } from 'react-native';
+import { AppointmentScreen } from './appointments';
+import { SalesScreen } from './sales';
 
 
 
-
+const Tab = createBottomTabNavigator();
 export const HomeScreen: React.FC = observer(({ }) => {
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen</Text>
-        </View>
+
+        <Tab.Navigator>
+            <Tab.Screen name="Appointments" component={AppointmentScreen} />
+            <Tab.Screen name="Sales" component={SalesScreen} />
+        </Tab.Navigator>
+
 
     );
 });

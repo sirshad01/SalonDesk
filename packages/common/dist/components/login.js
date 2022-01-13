@@ -29,6 +29,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoginScreen = void 0;
+var native_1 = require("@react-navigation/native");
 var mobx_react_lite_1 = require("mobx-react-lite");
 var react_1 = __importStar(require("react"));
 var react_native_1 = require("react-native");
@@ -46,7 +47,7 @@ exports.LoginScreen = (0, mobx_react_lite_1.observer)(function (_a) {
             react_1.default.createElement(react_native_1.TextInput, { style: styles.TextInput, placeholder: "Password", placeholderTextColor: "#704e33", secureTextEntry: true, onChangeText: function (password) { return setPassword(password); } })),
         react_1.default.createElement(react_native_1.TouchableOpacity, null,
             react_1.default.createElement(react_native_1.Text, { style: styles.forgot_button }, "Forgot Password?")),
-        react_1.default.createElement(react_native_1.TouchableOpacity, { style: styles.loginBtn },
+        react_1.default.createElement(native_1.Link, { style: styles.loginBtn, to: { screen: 'Home', params: { userId: '93792' } } },
             react_1.default.createElement(react_native_1.Text, { style: styles.login_text }, "LOGIN"))));
 });
 var styles = react_native_1.StyleSheet.create({
@@ -96,7 +97,7 @@ var styles = react_native_1.StyleSheet.create({
         marginTop: 40,
         backgroundColor: "#e29e67",
         borderWidth: 1,
-        borderColor: "#000000"
+        borderColor: "#000000",
     },
     login_text: {
         color: '#000000'
